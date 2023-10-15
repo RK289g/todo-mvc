@@ -1,17 +1,20 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import React from "react";
+import { Outlet } from "react-router-dom";
+import "./LayoutWrapper.css";
 
 const LayoutWrapper = () => {
-    return (
-        <div>
-            <div>
-            <h1>Layout wrapper</h1>
-            </div>
-            <div>
-                <Outlet/>
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <div>
+        <nav className="header">
+          <h1>ToDo App</h1>
+        </nav>
+      </div>
+      <div>
+        <Outlet />
+      </div>
+    </div>
+  );
 };
 
 export default LayoutWrapper;

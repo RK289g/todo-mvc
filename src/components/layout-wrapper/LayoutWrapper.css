@@ -1,0 +1,10 @@
+
+.header{
+    display: flex;
+    justify-content: center;
+}
+
+.header h1{
+    color: white;
+    font-size: 30px;
+}

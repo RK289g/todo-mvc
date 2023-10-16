@@ -8,3 +8,30 @@
     color: white;
     font-size: 30px;
 }
+
+
+.header {
+    background-color: #1C2B35;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    min-width: 1440px;
+    padding-left: 100px;
+    padding-right: 100px;
+    align-items: center;
+}
+
+nav.header div a {
+    text-decoration: none;
+    color: white;
+    margin: 30px;
+}
+
+nav.header div a:hover {
+    color: orange;
+}
+
+.header h1{
+    color: white;
+    font-size: 30px;
+}

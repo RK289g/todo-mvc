@@ -1,8 +1,21 @@
-div.form{
-    width: 300px;
-    background-color: #30313D;
-    border-radius: 10px;
-    padding: 5px;
-    margin-top: 5px;
-    color: white;
+.task-wrapper{
+    margin-top: 50px;
+    width: 100%;
 }
+.task-wrapper .task-inner-wrapper{
+    /* border: 1px solid grey; */
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+
+}
+.task-wrapper .task-inner-wrapper .task-name{
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: 40%;
+    padding: 0;
+    margin: 0;
+    padding-left: 10px;
+}
+
+

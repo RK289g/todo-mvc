@@ -1,8 +1,8 @@
 
-.header{
+/* .header{
     display: flex;
     justify-content: center;
-}
+} */
 
 .header h1{
     color: white;
@@ -15,9 +15,10 @@
     height: 80px;
     display: flex;
     justify-content: center;
+    width: 100%;
     min-width: 1440px;
-    padding-left: 100px;
-    padding-right: 100px;
+    /* padding-left: 100px;
+    padding-right: 100px; */
     align-items: center;
 }
 

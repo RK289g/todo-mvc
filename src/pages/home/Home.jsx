@@ -3,20 +3,30 @@ import "./Home.css";
 import Task from "../task/Task";
 
 const Home = () => {
-  const [taskName, setTaskName] = useState();
+  const [task, setTask] = useState("");
+  const [taskData, setTaskData] = useState([]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setTaskData([...taskData, task]);
+    setTask("");
+  };
+
   return (
     <div className="home-wrapper">
-      <form className="home-form">
+      <form className="home-form" onSubmit={handleSubmit}>
         <input
           className="input-text"
           type="text"
-          value={taskName}
-          onChange={(ev) => setTaskName(ev.target.value)}
-          placeholder="Your next task..."
+          value={task}
+          onChange={(e) => setTask(e.target.value)}
+          placeholder="Your task..."
         />
-        <button className="btn">Add</button>
+        <button type="submit" className="btn">
+          Add
+        </button>
       </form>
-      <Task />
+      {taskData.length > 0 ? <Task taskData={taskData} /> : "Empty List"}
     </div>
   );
 };

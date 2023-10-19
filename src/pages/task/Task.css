@@ -1,6 +1,7 @@
 .task-wrapper{
-    margin-top: 50px;
+    /* margin-top: 50px; */
     width: 100%;
+    margin-bottom: 20px;
 }
 .task-wrapper .task-inner-wrapper{
     /* border: 1px solid grey; */
@@ -16,6 +17,7 @@
     padding: 0;
     margin: 0;
     padding-left: 10px;
+    height: 35px !important;
 }
 
 

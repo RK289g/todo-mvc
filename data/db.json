@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Lorem Ipsum",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget sapien vitae dolor feugiat faucibus at in elit."
+    },
+    {
+      "id": 2,
+      "title": "Dolor Sit Amet",
+      "body": "Duis at odio nec est vulputate varius. Etiam sit amet libero nec ex commodo iaculis et nec erat."
+    },
+    {
+      "id": 3,
+      "title": "Sed Eget Justo",
+      "body": "Sed eget justo at felis luctus imperdiet. Cras ut lacus vitae libero auctor sollicitudin."
+    },
+    {
+      "id": 4,
+      "title": "Vestibulum Ante Ipsum",
+      "body": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut vel sem sit amet elit elementum sagittis."
+    },
+    {
+      "id": 5,
+      "title": "Pellentesque Euismod",
+      "body": "Pellentesque euismod lectus nec purus facilisis, vitae auctor velit lacinia. Vivamus auctor lectus nec turpis accumsan, et vehicula dolor dignissim."
+    }
+  ]
+}

@@ -1,21 +1,25 @@
 import "./Task.css";
 
-import React from "react";
-
 const Task = ({ taskData }) => {
-  console.log(taskData, "data");
-
-  return taskData.map((item, index) => {
-    return (
-      <div className="task-wrapper" key={index}>
-        <div className="task-inner-wrapper">
-          <p className="task-name">{item}</p>
-          <button className="btn-done">Done</button>
-          <button className="btn-delete">delete</button>
-        </div>
-      </div>
-    );
-  });
+  return (
+    <div>
+      {taskData.length <= 0
+        ? "Empty List"
+        : taskData?.map((task) => {
+            return (
+              <div className="task-wrapper" key={task?.id}>
+                <div className="task-inner-wrapper">
+                  <p className="task-name">{task?.title}</p>
+                  <div className="btn-div">
+                    <button className="btn-done">Done</button>
+                    <button className="btn-delete">delete</button>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+    </div>
+  );
 };
 
 export default Task;

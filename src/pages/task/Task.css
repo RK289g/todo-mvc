@@ -1,23 +1,35 @@
-.task-wrapper{
-    /* margin-top: 50px; */
-    width: 100%;
-    margin-bottom: 20px;
+.task-wrapper {
+  /* margin-top: 50px; */
+  width: 630px;
+  margin-bottom: 8px;
 }
-.task-wrapper .task-inner-wrapper{
-    /* border: 1px solid grey; */
+.task-wrapper .task-inner-wrapper {
+  /* border: 1px solid grey; */
+  display: flex;
+  /* gap: 10px; */
+  justify-content: space-between;
+  border: none;
+  box-shadow: 2px 1px 1px 2px rgb(226, 207, 207);
+}
+.task-wrapper .task-inner-wrapper .task-name {
+  /* border: none;
+  box-shadow: 2px 2px 2px 2px rgb(235, 73, 73); */
+  /* width: 40%; */
+  padding: 0;
+  margin: 0;
+  padding-left: 10px;
+  height: 35px !important;
+}
+.task-wrapper .task-inner-wrapper .btn-div{
     display: flex;
-    gap: 10px;
-    justify-content: center;
-
+    align-items: center;
+    margin: 3px;
+    gap: 5px;
 }
-.task-wrapper .task-inner-wrapper .task-name{
-    border: 1px solid grey;
-    border-radius: 10px;
-    width: 40%;
-    padding: 0;
-    margin: 0;
-    padding-left: 10px;
+.task-wrapper .task-inner-wrapper .btn-div .btn-done, .btn-delete{
     height: 35px !important;
+    /* margin-right: 5px; */
+    font-size: large;
+    border: none;
+
 }
-
-

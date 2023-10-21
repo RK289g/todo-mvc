@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 import Task from "../task/Task";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
   const [task, setTask] = useState("");
@@ -13,6 +14,8 @@ const Home = () => {
   useEffect(() => {
     fetchTasks();
   }, []);
+
+  const notify = () => toast("Task Added!!!!");
 
   const fetchTasks = () => {
     setIsLoading(true);
@@ -54,7 +57,6 @@ const Home = () => {
         return res.json();
       })
       .then((data) => {
-        alert("added");
         fetchTasks();
         setTask("");
       });
@@ -71,7 +73,7 @@ const Home = () => {
             onChange={(e) => setTask(e.target.value)}
             placeholder="Your task..."
           />
-          <button type="submit" className="submit-btn">
+          <button type="submit" className="submit-btn" onClick={notify}>
             Add
           </button>
         </div>
@@ -84,7 +86,7 @@ const Home = () => {
       )}
       <ToastContainer
         position="bottom-right"
-        autoClose={5000}
+        autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick

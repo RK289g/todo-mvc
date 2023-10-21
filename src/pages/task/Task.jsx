@@ -4,9 +4,15 @@ import {
   IconSquareRoundedCheckFilled,
 } from "@tabler/icons-react";
 import "./Task.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const notifyDone = () => toast("Done & dusted!!!");
+const notifyDelete = () => toast("Task Deleted succesfully!!!");
 
 const Task = ({ taskData, fetchTasks }) => {
   const handleDone = (task) => {
+    notifyDone();
     console.log(task);
 
     const payload = {
@@ -45,6 +51,7 @@ const Task = ({ taskData, fetchTasks }) => {
         console.log(data);
         fetchTasks();
       });
+      notifyDelete();
   };
 
   return (
@@ -86,6 +93,18 @@ const Task = ({ taskData, fetchTasks }) => {
               </div>
             );
           })}
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 };

@@ -6,59 +6,9 @@
       "completed": false
     },
     {
-      "id": 54,
-      "title": "AWS",
-      "completed": true
-    },
-    {
-      "id": 46,
-      "title": "TypeScript",
-      "completed": true
-    },
-    {
       "id": 94,
       "title": "Java",
-      "completed": false
-    },
-    {
-      "id": 93,
-      "title": "gfh",
-      "completed": false
-    },
-    {
-      "id": 56,
-      "title": "gfgfg",
-      "completed": false
-    },
-    {
-      "id": 18,
-      "title": "cbcvb",
-      "completed": false
-    },
-    {
-      "id": 1,
-      "title": "cvfb",
-      "completed": false
-    },
-    {
-      "id": 47,
-      "title": "addd",
-      "completed": false
-    },
-    {
-      "id": 70,
-      "title": "node",
-      "completed": false
-    },
-    {
-      "id": 72,
-      "title": "node",
-      "completed": false
-    },
-    {
-      "id": 25,
-      "title": "addd",
-      "completed": false
+      "completed": true
     }
   ]
 }

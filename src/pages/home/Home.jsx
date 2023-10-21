@@ -23,7 +23,11 @@ const Home = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const payload = { id: Math.floor(Math.random() * 10), title: task };
+    const payload = {
+      id: Math.floor(Math.random() * 100),
+      title: task,
+      completed: false,
+    };
 
     fetch("http://localhost:8000/tasks", {
       method: "POST",
@@ -55,7 +59,7 @@ const Home = () => {
           Add
         </button>
       </form>
-      <Task taskData={taskData} />
+      <Task taskData={taskData} fetchTasks={fetchTasks} />
     </div>
   );
 };

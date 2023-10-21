@@ -1,4 +1,8 @@
-import { IconSquareRoundedCheck, IconTrash } from "@tabler/icons-react";
+import {
+  IconSquareRoundedCheck,
+  IconTrash,
+  IconSquareRoundedCheckFilled,
+} from "@tabler/icons-react";
 import "./Task.css";
 
 const Task = ({ taskData, fetchTasks }) => {
@@ -51,13 +55,25 @@ const Task = ({ taskData, fetchTasks }) => {
             return (
               <div className="task-wrapper" key={task?.id}>
                 <div className="task-inner-wrapper">
-                  <p className="task-name">{task?.title}</p>
+                  <p
+                    className={
+                      task?.completed === true
+                        ? "completed-task-name"
+                        : "task-name"
+                    }
+                  >
+                    {task?.title}
+                  </p>
                   <div className="btn-div">
                     <button
                       className="btn-done"
                       onClick={() => handleDone(task)}
                     >
-                      <IconSquareRoundedCheck />
+                      {task?.completed === true ? (
+                        <IconSquareRoundedCheckFilled className="completed-icon" />
+                      ) : (
+                        <IconSquareRoundedCheck />
+                      )}
                     </button>
                     <button
                       className="btn-delete"

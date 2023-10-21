@@ -23,6 +23,12 @@ const Home = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if (task === "") {
+      alert("Please enter a Task Title");
+      return;
+    }
+
     const payload = {
       id: Math.floor(Math.random() * 100),
       title: task,
@@ -55,7 +61,7 @@ const Home = () => {
           onChange={(e) => setTask(e.target.value)}
           placeholder="Your task..."
         />
-        <button type="submit" className="btn">
+        <button type="submit" className="submit-btn">
           Add
         </button>
       </form>

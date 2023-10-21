@@ -12,10 +12,21 @@
 }
 
 .task-wrapper .task-inner-wrapper .task-name {
+  text-transform: capitalize;
   padding: 0;
   margin: 0;
   padding-left: 10px;
   height: 35px !important;
+}
+
+.task-wrapper .task-inner-wrapper .completed-task-name {
+  text-transform: capitalize;
+  opacity: 0.5;
+  padding: 0;
+  margin: 0;
+  padding-left: 10px;
+  height: 35px !important;
+  text-decoration: line-through;
 }
 
 .task-wrapper .task-inner-wrapper .btn-div {

@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 import Task from "../task/Task";
+import { ToastContainer } from "react-toastify";
 
 const Home = () => {
   const [task, setTask] = useState("");
   const [taskData, setTaskData] = useState([]);
+  const [errorMsg, setErrorMsg] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   //get data from server
   useEffect(() => {
@@ -12,12 +15,14 @@ const Home = () => {
   }, []);
 
   const fetchTasks = () => {
+    setIsLoading(true);
     fetch("http://localhost:8000/tasks")
       .then((res) => {
         return res.json();
       })
       .then((data) => {
         setTaskData(data);
+        setIsLoading(false);
       });
   };
 
@@ -25,8 +30,11 @@ const Home = () => {
     event.preventDefault();
 
     if (task === "") {
-      alert("Please enter a Task Title");
+      // alert("Please enter a Task Title");
+      setErrorMsg(true);
       return;
+    } else {
+      setErrorMsg(false);
     }
 
     const payload = {
@@ -46,6 +54,7 @@ const Home = () => {
         return res.json();
       })
       .then((data) => {
+        alert("added");
         fetchTasks();
         setTask("");
       });
@@ -53,19 +62,38 @@ const Home = () => {
 
   return (
     <div className="home-wrapper">
-      <form className="home-form" onSubmit={handleSubmit}>
-        <input
-          className="input-text"
-          type="text"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-          placeholder="Your task..."
-        />
-        <button type="submit" className="submit-btn">
-          Add
-        </button>
+      <form className="home-form-wrapper" onSubmit={handleSubmit}>
+        <div className="home-form">
+          <input
+            className="input-text"
+            type="text"
+            value={task}
+            onChange={(e) => setTask(e.target.value)}
+            placeholder="Your task..."
+          />
+          <button type="submit" className="submit-btn">
+            Add
+          </button>
+        </div>
+        {errorMsg && <p>Error!</p>}
       </form>
-      <Task taskData={taskData} fetchTasks={fetchTasks} />
+      {isLoading ? (
+        "Loading...."
+      ) : (
+        <Task taskData={taskData} fetchTasks={fetchTasks} />
+      )}
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 };

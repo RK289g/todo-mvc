@@ -1,14 +1,39 @@
 {
   "tasks": [
     {
-      "id": 48,
+      "id": 4,
       "title": "Node",
       "completed": false
     },
     {
-      "id": 94,
-      "title": "Java",
+      "id": 27,
+      "title": "AWS",
+      "completed": false
+    },
+    {
+      "id": 65,
+      "title": "JavaScript",
       "completed": true
+    },
+    {
+      "id": 41,
+      "title": "TypeScript",
+      "completed": false
+    },
+    {
+      "id": 31,
+      "title": "HTML",
+      "completed": false
+    },
+    {
+      "id": 72,
+      "title": "CSS",
+      "completed": false
+    },
+    {
+      "id": 95,
+      "title": "Python",
+      "completed": false
     }
   ]
 }

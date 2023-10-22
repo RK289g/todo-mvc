@@ -38,6 +38,7 @@ const Home = () => {
       return;
     } else {
       setErrorMsg(false);
+      notify();
     }
 
     const payload = {
@@ -73,11 +74,11 @@ const Home = () => {
             onChange={(e) => setTask(e.target.value)}
             placeholder="Your task..."
           />
-          <button type="submit" className="submit-btn" onClick={notify}>
+          <button type="submit" className="submit-btn">
             Add
           </button>
         </div>
-        {errorMsg && <p>Error!</p>}
+        {errorMsg && <p>Error! Plz enter a task</p>}
       </form>
       {isLoading ? (
         "Loading...."

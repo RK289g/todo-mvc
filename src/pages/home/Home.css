@@ -18,14 +18,17 @@
   border: none;
   box-shadow: 2px 1px 1px 2px rgb(226, 207, 207);
   display: flex;
-  width: 600px;
+  width: 515px;
   font-size: 22px;
   padding: 8px 14px;
+  outline: none;
 }
 
 .home-wrapper .home-form .submit-btn {
   background: none;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  border: none;
+  box-shadow: 2px 1px 1px 2px rgb(226, 207, 207);
   border-radius: 10px;
   display: block;
   font-size: 18px;

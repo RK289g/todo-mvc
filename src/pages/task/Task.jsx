@@ -8,12 +8,16 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const notifyDone = () => toast("Done & dusted!!!");
+const notifyUnDone = () => toast("Let's give it another shot!");
 const notifyDelete = () => toast("Task Deleted succesfully!!!");
 
 const Task = ({ taskData, fetchTasks }) => {
   const handleDone = (task) => {
-    notifyDone();
-    console.log(task);
+    if (task.completed) {
+      notifyUnDone();
+    } else {
+      notifyDone();
+    }
 
     const payload = {
       id: task.id,
@@ -51,7 +55,7 @@ const Task = ({ taskData, fetchTasks }) => {
         console.log(data);
         fetchTasks();
       });
-      notifyDelete();
+    notifyDelete();
   };
 
   return (

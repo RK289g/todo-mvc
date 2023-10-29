@@ -3,6 +3,7 @@ import "./Home.css";
 import Task from "../task/Task";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 const Home = () => {
   const [task, setTask] = useState("");
@@ -17,14 +18,28 @@ const Home = () => {
 
   const notify = () => toast("Task Added!!!!");
 
+  // const fetchTasks = () => {
+  //   setIsLoading(true);
+  //   fetch("http://localhost:8000/tasks")
+  //     .then((res) => {
+  //       return res.json();
+  //     })
+  //     .then((data) => {
+  //       setTaskData(data);
+  //       setIsLoading(false);
+  //     });
+  // };
+
   const fetchTasks = () => {
     setIsLoading(true);
-    fetch("http://localhost:8000/tasks")
-      .then((res) => {
-        return res.json();
+    axios
+      .get("http://localhost:8000/tasks")
+      .then((response) => {
+        setTaskData(response.data);
+        setIsLoading(false);
       })
-      .then((data) => {
-        setTaskData(data);
+      .catch((error) => {
+        console.error("Error fetching tasks: ", error);
         setIsLoading(false);
       });
   };
@@ -47,19 +62,32 @@ const Home = () => {
       completed: false,
     };
 
-    fetch("http://localhost:8000/tasks", {
-      method: "POST",
-      body: JSON.stringify(payload),
+    // fetch("http://localhost:8000/tasks", {
+    //   method: "POST",
+    //   body: JSON.stringify(payload),
+    //   headers: {
+    //     "Content-type": "application/json; charset=UTF-8",
+    //   },
+    // })
+    //   .then((res) => {
+    //     return res.json();
+    //   })
+    //   .then((data) => {
+    //     fetchTasks();
+    //     setTask("");
+    //   });
+
+    axios.post("http://localhost:8000/tasks", payload, {
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
     })
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
+      .then((response) => {
         fetchTasks();
         setTask("");
+      })
+      .catch((error) => {
+        console.error("Error adding task: ", error);
       });
   };
 

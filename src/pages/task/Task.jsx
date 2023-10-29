@@ -6,6 +6,7 @@ import {
 import "./Task.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 const notifyDone = () => toast("Done & dusted!!!");
 const notifyUnDone = () => toast("Let's give it another shot!");
@@ -25,37 +26,63 @@ const Task = ({ taskData, fetchTasks }) => {
       completed: !task.completed,
     };
 
-    fetch(`http://localhost:8000/tasks/${task.id}`, {
-      method: "PATCH",
-      body: JSON.stringify(payload),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((res) => {
-        return res.json();
+    // fetch(`http://localhost:8000/tasks/${task.id}`, {
+    //   method: "PATCH",
+    //   body: JSON.stringify(payload),
+    //   headers: {
+    //     "Content-type": "application/json; charset=UTF-8",
+    //   },
+    // })
+    //   .then((res) => {
+    //     return res.json();
+    //   })
+    //   .then((data) => {
+    //     console.log(data);
+    //     fetchTasks();
+    //   });
+
+    axios
+      .patch(`http://localhost:8000/tasks/${task.id}`, payload, {
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
       })
-      .then((data) => {
-        console.log(data);
+      .then((response) => {
         fetchTasks();
+      })
+      .catch((error) => {
+        console.error("Error updating task: ", error);
       });
   };
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:8000/tasks/${id}`, {
-      method: "DELETE",
+    // fetch(`http://localhost:8000/tasks/${id}`, {
+    //   method: "DELETE",
+    //   headers: {
+    //     "Content-type": "application/json; charset=UTF-8",
+    //   },
+    // })
+    //   .then((res) => {
+    //     return res.json();
+    //   })
+    //   .then((data) => {
+    //     console.log(data);
+    //     fetchTasks();
+    //   });
+    // notifyDelete();
+
+    axios.delete(`http://localhost:8000/tasks/${id}`, {
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
     })
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
+      .then((response) => {
         fetchTasks();
+        notifyDelete();
+      })
+      .catch((error) => {
+        console.error("Error deleting task: ", error);
       });
-    notifyDelete();
   };
 
   return (

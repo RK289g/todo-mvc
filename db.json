@@ -1,11 +1,6 @@
 {
   "tasks": [
     {
-      "id": 4,
-      "title": "Node",
-      "completed": false
-    },
-    {
       "id": 27,
       "title": "AWS",
       "completed": false
@@ -18,6 +13,16 @@
     {
       "id": 41,
       "title": "TypeScript",
+      "completed": true
+    },
+    {
+      "id": 34,
+      "title": "SQL",
+      "completed": false
+    },
+    {
+      "id": 18,
+      "title": "vfvfhijosud",
       "completed": false
     }
   ]

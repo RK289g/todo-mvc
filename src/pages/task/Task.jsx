@@ -26,21 +26,6 @@ const Task = ({ taskData, fetchTasks }) => {
       completed: !task.completed,
     };
 
-    // fetch(`http://localhost:8000/tasks/${task.id}`, {
-    //   method: "PATCH",
-    //   body: JSON.stringify(payload),
-    //   headers: {
-    //     "Content-type": "application/json; charset=UTF-8",
-    //   },
-    // })
-    //   .then((res) => {
-    //     return res.json();
-    //   })
-    //   .then((data) => {
-    //     console.log(data);
-    //     fetchTasks();
-    //   });
-
     axios
       .patch(`http://localhost:8000/tasks/${task.id}`, payload, {
         headers: {
@@ -56,21 +41,6 @@ const Task = ({ taskData, fetchTasks }) => {
   };
 
   const handleDelete = (id) => {
-    // fetch(`http://localhost:8000/tasks/${id}`, {
-    //   method: "DELETE",
-    //   headers: {
-    //     "Content-type": "application/json; charset=UTF-8",
-    //   },
-    // })
-    //   .then((res) => {
-    //     return res.json();
-    //   })
-    //   .then((data) => {
-    //     console.log(data);
-    //     fetchTasks();
-    //   });
-    // notifyDelete();
-
     axios.delete(`http://localhost:8000/tasks/${id}`, {
       headers: {
         "Content-type": "application/json; charset=UTF-8",

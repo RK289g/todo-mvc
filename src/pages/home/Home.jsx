@@ -62,21 +62,6 @@ const Home = () => {
       completed: false,
     };
 
-    // fetch("http://localhost:8000/tasks", {
-    //   method: "POST",
-    //   body: JSON.stringify(payload),
-    //   headers: {
-    //     "Content-type": "application/json; charset=UTF-8",
-    //   },
-    // })
-    //   .then((res) => {
-    //     return res.json();
-    //   })
-    //   .then((data) => {
-    //     fetchTasks();
-    //     setTask("");
-    //   });
-
     axios.post("http://localhost:8000/tasks", payload, {
       headers: {
         "Content-type": "application/json; charset=UTF-8",
